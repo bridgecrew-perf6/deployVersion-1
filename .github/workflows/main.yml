@@ -12,7 +12,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: build images
-        run: docker-compose up -d
+        run: docker-compose -f ./docker-compose.yml up -d
       - name: docker push
         run: docker-compose push
       - name: Build and push

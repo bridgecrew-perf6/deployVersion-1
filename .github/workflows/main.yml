@@ -1,8 +1,5 @@
-name: Docker Image CI
-
-on:
-  push:
-    branches: [ main ]
+name: docker-compose-actions-workflow
+on: push
 
 jobs:
   build:

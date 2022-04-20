@@ -15,7 +15,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: build images
-        run: docker-compose build --no-cache
+        run: docker-compose.yml build --no-cache
       - name: docker push
         run: docker-compose push
       - name: Build and push

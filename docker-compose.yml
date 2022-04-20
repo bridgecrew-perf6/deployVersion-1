@@ -12,6 +12,6 @@ services:
     image: ${DOCKER_REGISTRY-}backendrecycle
     build:
       context: .
-      dockerfile: backend.Recycle/Dockerfile
+      dockerfile: Dockerfile
     depends_on:
       - db

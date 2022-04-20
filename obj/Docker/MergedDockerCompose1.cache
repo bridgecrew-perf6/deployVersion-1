@@ -1,0 +1,21 @@
+services:
+  backend.recycle:
+    build:
+      context: C:\Users\H\Desktop\New folder\Recycle\backend.Recycle
+      dockerfile: backend.Recycle/Dockerfile
+    depends_on:
+      db:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: backendrecycle
+    ports:
+    - target: 80
+    volumes:
+    - C:\Users\H\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+  db:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: 1Secure*Password1
+    image: mcr.microsoft.com/mssql/server:2017-latest
+version: '3.4'
